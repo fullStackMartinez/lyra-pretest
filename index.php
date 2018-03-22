@@ -15,7 +15,11 @@
 		<div id="map"></div>
 		<script>
 			function initMap(){
-
+				var center = {lat: 35.0844, lng: -106.6504};
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 10,
+					center: center
+				});
 			}
 		</script>
 		<script async defer
