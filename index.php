@@ -12,6 +12,14 @@
 			<h1>How Far Is Your Trip?</h1>
 			<p>This page is intended to take two points and calculate the distance and travel duration between them using Google Maps.</p>
 		</header>
+		<div id="map"></div>
+		<script>
+			function initMap(){
 
+			}
+		</script>
+		<script async defer
+				  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCObJ9LHdniD6gtg4QlT45KpWygYZ96PFA&callback=initMap">
+		</script>
 	</body>
 </html>
