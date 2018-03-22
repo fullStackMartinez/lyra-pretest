@@ -20,6 +20,16 @@
 			<p>This page is intended to take two points and calculate the distance and travel duration between them using Google Maps.</p>
 		</header>
 		<div id="map"></div>
+		<form>
+			<div class="form-group">
+				<label for="formGroupExampleInput">Example label</label>
+				<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+			</div>
+			<div class="form-group">
+				<label for="formGroupExampleInput2">Another label</label>
+				<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+			</div>
+		</form>
 		<script>
 			function initMap(){
 				var center = {lat: 35.0844, lng: -106.6504};
