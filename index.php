@@ -22,13 +22,13 @@
 		<div id="map"></div>
 		<form id="distance">
 			<div class="form-group">
-				<label for="from_places">Origin</label>
-				<input class="form-control" id="from_places" placeholder="Where are you coming from?">
+				<label for="starting_point">Origin</label>
+				<input class="form-control" id="starting_point" placeholder="Where are you coming from?">
 				<input id="origin" type="hidden" name="origin" required/>
 			</div>
 			<div class="form-group">
-				<label for="to_places">Destination</label>
-				<input class="form-control" id="to_places" placeholder="What is your destination?">
+				<label for="ending_point">Destination</label>
+				<input class="form-control" id="ending_point" placeholder="What is your destination?">
 				<input id="destination" type="hidden" name="destination" required/>
 			</div>
 			<input type="submit" value="calculate" class="btn btn-primary"/>
@@ -51,17 +51,17 @@
 	<script>
 		$(function(){
 			google.maps.event.addDomListener(window, 'load', function(){
-				var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
-				var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
+				var starting_point = new google.maps.places.Autocomplete(document.getElementById('starting_point'));
+				var ending_point = new google.maps.places.Autocomplete(document.getElementById('ending_point'));
 
-				google.maps.event.addListener(from_places, 'place_changed', function() {
-					var from_place = from_places.getPlace();
-					var from_address = from_place.formatted_address;
+				google.maps.event.addListener(starting_point, 'place_changed', function() {
+					var start = starting_point.getPlace();
+					var from_address = start.formatted_address;
 					$('#origin').val(from_address);
 				});
-				google.maps.event.addListener(to_places, 'place_changed', function(){
-					var to_place = to_places.getPlace();
-					var to_address = to_place.formatted_address;
+				google.maps.event.addListener(ending_point, 'place_changed', function(){
+					var end = ending_point.getPlace();
+					var to_address = end.formatted_address;
 					$('#destination').val(to_address);
 				});
 			});
@@ -86,7 +86,7 @@
 					var origin = response.originAddresses[0];
 					var destination = response.destinationAddresses[0];
 					if (response.rows[0].elements[0].status ==="ZERO_RESULTS") {
-						$('#results').html("sorry, no results")
+						$('#results').html("Sorry, but your search came up with no results. Please try again.")
 					} else {
 						var distance = response.rows[0].elements[0].distance;
 						var duration = response.rows[0].elements[0].duration;
