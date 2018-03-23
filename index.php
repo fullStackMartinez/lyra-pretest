@@ -55,7 +55,7 @@
 			</div>
 		</div>
 
-		<!--initializing Map options including center point and initial zoom level-->
+		<!--iinitializing Map options including center point and initial zoom level-->
 
 		<script>
 			function initMap() {
