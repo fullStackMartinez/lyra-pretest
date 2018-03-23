@@ -10,16 +10,21 @@
 		<style>
 			#map {
 				height: 300px;
-				width: 75%;
+				width: 90%;
 			}
 		</style>
 	</head>
 	<body>
-		<header>
+		<header class="container">
 			<h1>How Far Is Your Trip?</h1>
 			<p>This page is intended to take two points and calculate the distance and travel duration between them using Google Maps.</p>
 		</header>
+		<div class="container">
+			<div class="row mt-3">
+				<div class="col-md-6">
 		<div id="map"></div>
+				</div>
+		<div class="col-md-6">
 		<form id="distance">
 			<div class="form-group">
 				<label for="starting_point">Origin</label>
@@ -39,11 +44,14 @@
 				<li>duration : <span id="duration_value"></span></li>
 			</ul>
 		</div>
+		</div>
+		</div>
+		</div>
 		<script>
 			function initMap(){
 				var center = {lat: 35.0844, lng: -106.6504};
 				var map = new google.maps.Map(document.getElementById('map'), {
-					zoom: 10,
+					zoom: 13,
 					center: center
 				});
 			}
@@ -63,6 +71,12 @@
 					var end = ending_point.getPlace();
 					var to_address = end.formatted_address;
 					$('#destination').val(to_address);
+				});
+
+				var marker = new google.maps.Marker({
+					position: starting_point,
+					map: map,
+					title: 'Hello World!'
 				});
 			});
 			//calculate the distance between locations
