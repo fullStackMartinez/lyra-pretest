@@ -36,7 +36,7 @@
 		<div id="results">
 			<ul class="list-group">
 				<li>distance : <span id="in_mile"></span></li>
-				<li>duration : <span id="duration"></span></li>
+				<li>duration : <span id="duration_value"></span></li>
 			</ul>
 		</div>
 		<script>
@@ -91,10 +91,22 @@
 						var distance = response.rows[0].elements[0].distance;
 						var duration = response.rows[0].elements[0].duration;
 						var distance_in_mile = distance.value / 1609.34;
+						var duration_text = duration.text;
+						var duration_value = duration.value;
+						$('#in_mile').text(distance_in_mile.toFixed(2));
+						$('#duration_text').text(duration_text);
+						$('#duration_value').text(duration_value);
+						$('#from').text(origin);
+						$('#to').text(destination);
 					}
 				}
 			}
-		})
+			//print results on submit form
+			$('#distance').submit(function(e) {
+				e.preventDefault();
+				calculateDistance();
+			});
+		});
 	</script>
 		<script async defer
 				  src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCObJ9LHdniD6gtg4QlT45KpWygYZ96PFA&callback=initMap">
