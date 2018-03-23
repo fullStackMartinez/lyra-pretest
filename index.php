@@ -47,8 +47,8 @@
 					<!--list of results, distance and trip duration-->
 					<div id="results">
 						<ul class="list-group">
-							<li>distance : <span id="in_mile"></span></li>
-							<li>duration : <span id="duration_value"></span></li>
+							<li>distance : <span id="in_mile"></span> miles</li>
+							<li>duration : <span id="duration_text"></span></li>
 						</ul>
 					</div>
 				</div>
@@ -100,7 +100,7 @@
 					var starting_point = new google.maps.places.Autocomplete(document.getElementById('starting_point'));
 					var ending_point = new google.maps.places.Autocomplete(document.getElementById('ending_point'));
 
-					//Using addListener event in order toset up function to get distance between points
+					//Using addListener event in order to set up function to get distance between points
 
 					google.maps.event.addListener(starting_point, 'place_changed', function() {
 						var start = starting_point.getPlace();
