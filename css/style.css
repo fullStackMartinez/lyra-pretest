@@ -2,9 +2,15 @@
 	list-style-type: none;
 }
 
-#hero {
+.jumbotron {
+	background: url("../image/beer.jpg") no-repeat center center fixed;
+	display: table;
+	height: 100%;
 	position: relative;
-	background: url("image/beer.jpg") no-repeat center center fixed;
+	width:100%;
+	background-size: cover;
+	padding-top: 10%;
+	padding-bottom: 20%;
 }
 p {
 	color: red;
