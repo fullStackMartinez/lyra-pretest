@@ -2,16 +2,21 @@
 	list-style-type: none;
 }
 
-.jumbotron {
+#home {
 	background: url("../image/beer.jpg") no-repeat center center fixed;
 	display: table;
-	height: 100%;
 	position: relative;
 	width:100%;
 	background-size: cover;
-	padding-top: 10%;
-	padding-bottom: 20%;
+	min-height: 500px;
+	color: white;
 }
-p {
-	color: red;
+
+.overlay {
+	background-color: rgba(0,0,0,0.3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 500px;
 }
